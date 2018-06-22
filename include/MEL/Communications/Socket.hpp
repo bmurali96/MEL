@@ -26,6 +26,7 @@
 #include <MEL/Utility/Types.hpp>
 #include <vector>
 
+#include <sys/socket.h>
 #ifdef __linux__
 #include <sys/socket.h>
 #elif _WIN32
@@ -46,7 +47,7 @@ typedef UINT_PTR SocketHandle;
 #elif __linux__
 typedef int SocketHandle;
 #endif
-
+typedef int SocketHandle;
 //==============================================================================
 // FORWARD DECLARATIONS
 //==============================================================================

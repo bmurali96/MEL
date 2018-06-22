@@ -35,7 +35,7 @@ option(LEGACY    "Turn ON if you need depreciated MEL classes."               OF
 set(NI_X64_ROOT  "C:/dev/nirlt-linux-x64"            CACHE FILEPATH "Absolute path to NI Linux Realtime GNU compiler.")
 set(NI_ARM_ROOT  "C:/dev/nirlt-linux-arm"            CACHE FILEPATH "Absolute path to NI Linux Realtime GNU compiler.")
 set(QUANSER_ROOT "C:/Program Files/Quanser"          CACHE FILEPATH "Absolute path to Quanser installation."          )
-set(MYO_ROOT     "C:/dev/myo-sdk-win-0.9.0"          CACHE FILEPATH "Absolute path to Myo SDK."                       )
+set(MYO_ROOT     "~/dev/myo"          CACHE FILEPATH "Absolute path to Myo SDK."                       )
 
 #===============================================================================
 # SETUP BUILD

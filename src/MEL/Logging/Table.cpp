@@ -1,6 +1,8 @@
 #include <MEL/Logging/Table.hpp>
 #include <MEL/Logging/Log.hpp>
 #include <sstream>
+#include <string>
+#include <iostream>
 
 namespace mel {
 

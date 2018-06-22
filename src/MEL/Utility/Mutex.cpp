@@ -1,5 +1,6 @@
 #include <MEL/Utility/Mutex.hpp>
 #include <MEL/Utility/NonCopyable.hpp>
+#include <pthread.h>
 #ifdef _WIN32
     #include <windows.h>
 #elif __linux__

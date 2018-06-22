@@ -5,6 +5,7 @@
 #include <fstream>
 #include <thread>
 
+#include <unistd.h>
 #ifdef __linux__
 #include <unistd.h>
 #endif
@@ -29,7 +30,7 @@ bool DataLogger::write_to_csv(const std::vector<std::string> &header, const std:
 	}
 	LOG(Verbose) << "Writing header to " << full_filename;
 	create_directory(directory);
-	_unlink(full_filename.c_str());
+	unlink(full_filename.c_str());
 	File file;	
 	if (!header.empty()) {
 		file.open(full_filename.c_str());
@@ -61,7 +62,7 @@ bool DataLogger::write_to_csv(const std::vector<std::vector<double>> &data, cons
 	}
 	LOG(Verbose) << "Saving data to " << full_filename;
 	create_directory(directory);
-	_unlink(full_filename.c_str());
+	unlink(full_filename.c_str());
 	File file;
 	file.open(full_filename.c_str());
 	
@@ -96,7 +97,7 @@ bool DataLogger::write_to_csv(const Table &data, const std::string &filename, co
 	}
 	LOG(Verbose) << "Saving data to " << full_filename;
 	create_directory(directory);
-	_unlink(full_filename.c_str());
+	unlink(full_filename.c_str());
 	File file;
 	file.open(full_filename.c_str());
 	std::ostringstream oss;
@@ -137,7 +138,7 @@ bool DataLogger::write_to_csv(const std::vector<Table> &data, const std::string 
 	}
 	LOG(Verbose) << "Saving data to " << full_filename;
 	create_directory(directory);
-	_unlink(full_filename.c_str());
+	unlink(full_filename.c_str());
 	File file;	
 	file.open(full_filename.c_str());
 	std::ostringstream oss;
@@ -554,7 +555,7 @@ void DataLogger::open(const std::string& filename, const std::string& directory,
         else
             full_filename = directory + get_path_slash() + filename_no_ext_ + "." + file_ext_;
         LOG(Verbose) << "Opening data file " << full_filename;
-        _unlink(full_filename.c_str());
+        unlink(full_filename.c_str());
         file_size_ = file_.open(full_filename.c_str());
         file_opened_ = true;
     }
@@ -671,7 +672,7 @@ void DataLogger::double_rows() {
 void DataLogger::save_thread_func(const std::string& full_filename, const std::string& directory) {
     Lock lock(mutex_);
     create_directory(directory);
-    _unlink(full_filename.c_str());
+    unlink(full_filename.c_str());
     file_.open(full_filename.c_str());
     file_opened_ = true;
     write_header();

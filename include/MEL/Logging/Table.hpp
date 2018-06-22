@@ -18,6 +18,7 @@
 #ifndef MEL_TABLE_HPP
 #define MEL_TABLE_HPP
 
+#include <string>
 #include <vector>
 
 namespace mel{

@@ -2,6 +2,7 @@
 #include <csignal>
 #include <iostream>
 
+#include <unistd.h>
 #ifdef __linux__
 #include <unistd.h>
 #elif _WIN32
